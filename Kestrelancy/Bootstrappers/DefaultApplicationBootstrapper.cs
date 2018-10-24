@@ -41,10 +41,10 @@ namespace Kestrelancy.Bootstrappers
 
         protected override void ConfigureConventions(NancyConventions nancyConventions)
         {
-            //nancyConventions.StaticContentsConventions = new List<Func<NancyContext, string, Response>>
-            //{
-            //    StaticContentConventionBuilder.AddDirectory("/" , _root)
-            //};
+            nancyConventions.StaticContentsConventions = new List<Func<NancyContext, string, Response>>
+            {
+                StaticContentConventionBuilder.AddDirectory("/" , System.IO.Path.Combine(_root , "wwwroot"))
+            };
             base.ConfigureConventions(nancyConventions);
         }
 

@@ -14,8 +14,8 @@ namespace Kestrelancy
         {
             var host = new WebHostBuilder()
                .UseUrls("http://*:" + port + "/")
-               .UseWebRoot(Path.Combine(root, "wwwroot"))
                .UseContentRoot(root)
+               .UseWebRoot(System.IO.Path.Combine(root, "wwwroot"))
                .UseKestrel()
                .UseStartup<Startup>()
                .Build();
